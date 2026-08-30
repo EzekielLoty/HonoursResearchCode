@@ -1,0 +1,35 @@
+# core
+numpy==2.5.2
+sentence-transformers==6.0.0    # local embeddings (all-MiniLM-L6-v2)
+openai==3.3.1
+python-dotenv==1.2.3
+
+# systems/vector_baseline.py — no extra deps beyond core
+
+# systems/mem0_adapter.py
+mem0ai==2.0.19
+
+# systems/amem_adapter.py — not on PyPI:
+#   pip install "git+https://github.com/agiresearch/A-mem.git"
+
+# systems/mempalace_adapter.py
+mempalace==3.8.0
+
+# systems/graphiti_adapter.py — requires FalkorDB:
+#   docker run -d --name falkordb-benchmark -p 6379:6379 falkordb/falkordb:latest
+graphiti-core[falkordb]==0.29.3
+
+# systems/letta_adapter.py — requires a self-hosted Letta server:
+#   docker run -d --name letta-benchmark -v letta_pgdata:/var/lib/postgresql/data \
+#       -p 8283:8283 -e OPENAI_API_KEY="$OPENAI_API_KEY" letta/letta:latest
+letta-client==1.12.1
+
+# systems/langchain_memory.py
+langchain==1.3.18
+langchain-classic==1.0.8
+langchain-core==1.6.1
+langchain-openai==1.6.0
+
+# optional convenience
+# pandas
+# scikit-learn
